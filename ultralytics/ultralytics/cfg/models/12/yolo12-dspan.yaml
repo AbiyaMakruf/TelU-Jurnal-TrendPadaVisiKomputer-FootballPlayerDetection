@@ -1,0 +1,51 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# YOLO12 object detection model with P3/8 - P5/32 outputs incorporating DsPAN head
+# Model docs: https://docs.ultralytics.com/models/yolo12
+# Task docs: https://docs.ultralytics.com/tasks/detect
+
+# Parameters
+nc: 80 # number of classes
+scales: # model compound scaling constants, i.e. 'model=yolo12n-dspan.yaml' will call yolo12-dspan.yaml with scale 'n'
+  # [depth, width, max_channels]
+  # n: [0.50, 0.25, 1024] # summary: # layers, # parameters, # gradients, # GFLOPs (Update after running)
+  s: [0.50, 0.50, 1024]
+  m: [0.50, 1.00, 512]
+  l: [1.00, 1.00, 512]
+  x: [1.00, 1.50, 512]
+
+# YOLO12n backbone (Unchanged from original)
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, Conv, [64, 3, 2]] # 0-P1/2
+  - [-1, 1, Conv, [128, 3, 2]] # 1-P2/4
+  - [-1, 2, C3k2, [256, False, 0.25]] # 2
+  - [-1, 1, Conv, [256, 3, 2]] # 3-P3/8
+  - [-1, 2, C3k2, [512, False, 0.25]] # 4 (Backbone P3 output for head)
+  - [-1, 1, Conv, [512, 3, 2]] # 5-P4/16
+  - [-1, 4, A2C2f, [512, True, 4]] # 6 (Backbone P4 output for head)
+  - [-1, 1, Conv, [1024, 3, 2]] # 7-P5/32
+  - [-1, 4, A2C2f, [1024, True, 1]] # 8 (Backbone P5 output for head)
+
+# DsPAN Head based on Fig. 3
+head:
+  # FPN Path (Top-down)
+  - [-1, 1, Conv, [512, 1, 1]] # 9 - CBS block after P5 input (reduce P5 channels)
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]] # 10 - Upsample P5 feature
+  - [[-1, 6], 1, Concat, [1]] # 11 - Concat with backbone P4 (layer 6)
+  - [-1, 2, A2C2f, [512, False, -1]] # 12 - C2F block (intermediate P4 head feature)
+
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]] # 13 - Upsample intermediate P4 feature
+  - [[-1, 4], 1, Concat, [1]] # 14 - Concat with backbone P3 (layer 4)
+  - [-1, 2, A2C2f, [256, False, -1]] # 15 - C2F block (Output D1 - P3 head feature)
+
+  # Detail-sensitive PAN Path (Bottom-up)
+  - [-1, 1, LCBHAM, [512, 3, 2]] # 16 - LCBHAM (downsample) from P3 head output (layer 15)
+  - [[-1, 12], 1, Concat, [1]] # 17 - Concat with intermediate P4 head feature (layer 12)
+  - [-1, 2, A2C2f, [512, False, -1]] # 18 - C2F block (Output D2 - P4 head feature)
+
+  - [-1, 1, LCBHAM, [1024, 3, 2]] # 19 - LCBHAM (downsample) from P4 head output (layer 18)
+  - [[-1, 9], 1, Concat, [1]] # 20 - Concat with reduced P5 feature (layer 9)
+  - [-1, 2, A2C2f, [1024, False, -1]] # 21 - C2F block (Output D3 - P5 head feature)
+
+  # Detection Layer
+  - [[15, 18, 21], 1, Detect, [nc]] # Detect(P3, P4, P5) from layers 15 (D1), 18 (D2), 21 (D3)

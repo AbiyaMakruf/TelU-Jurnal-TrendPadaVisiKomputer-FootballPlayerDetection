@@ -1,0 +1,64 @@
+YOLO11s - flow
+0.848       0.78      0.841      0.426 - flow
+0.416     0.0785      0.247      0.119 - wt
+
+YOLO11s - yaml - flow
+0.841      0.793      0.841      0.423 - flow
+0.407     0.0612      0.235       0.12 - wt
+
+YOLO11s - wt
+0.375      0.285      0.214     0.0633 - flow
+0.903      0.875      0.925      0.577 - wt
+
+YOLO11s - wt-flow
+0.838      0.755      0.817      0.404 - flow
+0.907       0.87      0.925      0.576 - wt
+
+YOLO11s - yaml - wt-flow
+0.844      0.771      0.827      0.408 - flow
+0.894      0.882      0.924      0.579 - wt
+
+YOLO11s - wt-flow-taco
+0.842      0.775      0.834      0.412 - flow
+0.909      0.866      0.924      0.575 - wt
+
+YOLO11s - yaml - wt-flow-taco
+0.821      0.749      0.799      0.387 - flow
+0.896      0.852      0.915      0.562 - wt
+
+YOLO11s - wt-flow-uav
+0.828      0.768       0.82      0.397 - flow
+0.909      0.873      0.925      0.577 - wt
+
+YOLO11s - wt-flow-uav-taco
+0.834      0.777      0.827      0.415 - flow
+0.912      0.864      0.926      0.579 - wt
+
+YOLO11s-dspan wt-flow-taco
+0.832      0.772      0.831      0.415 - flow
+0.914      0.862      0.924      0.574 - wt
+
+YOLO11s-simam wt-flow-taco
+0.831       0.76      0.815        0.4 - flow
+0.904      0.871      0.924      0.573 - wt
+
+YOLO11s-dspan-simam wt-flow-taco
+0.831      0.764      0.825      0.406 - flow
+0.91       0.868      0.924      0.574 - wt
+
+
+m
+YOLOv11.yaml
+20,114,672 gradients, 68.5 GFLOPs
+m 1x dspan
+19,529,858 gradients, 66.6 GFLOPs
+
+s
+9,458,736 gradients, 21.7 GFLOPs
+s 1x dspan
+8,930,562 gradients, 20.1 GFLOPs
+
+n
+2,624,064 gradients, 6.6 GFLOPs
+n 1x dspan
+2,491,570 gradients, 6.2 GFLOPs
