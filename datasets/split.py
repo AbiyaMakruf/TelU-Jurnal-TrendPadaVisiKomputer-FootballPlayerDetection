@@ -5,34 +5,92 @@ from pathlib import Path
 import random
 import cv2
 
-SOURCE_DIR = 'tracking-2023/train/'
+SOURCE_DIR = 'tracking-2023/test/'
 TARGET_DIR = './split/'
-SPLIT_RATIO = 0.8  # 80% train, 20% valid
+SPLIT_RATIO = 1  # 80% train, 20% valid
 
 # Mapping per folder
 ID_MAPPINGS = {
-    "SNMOT-060": {
-        "referee": [14, 17,26],
-        "ball": [18],
-        "goalkeeper": [22,25]
+    "SNMOT-116": {
+        "referee": [4,25],
+        "ball": [20],
+        "goalkeeper": [19]
     },
-    "SNMOT-061": {
-        "referee": [3,4,26],
+    "SNMOT-117": {
+        "referee": [3,21],
+        "ball": [8],
+        "goalkeeper": [11]
+    },
+    "SNMOT-118": {
+        "referee": [14,21],
+        "ball": [11],
+        "goalkeeper": [9]
+    },
+    "SNMOT-119": {
+        "referee": [15,22],
+        "ball": [6],
+        "goalkeeper": [5]
+    },
+    "SNMOT-120": {
+        "referee": [22,26],
         "ball": [1],
-        "goalkeeper": [2,25]
+        "goalkeeper": [11, 26]
     },
-        "SNMOT-062": {
-        "referee": [18,23],
+    "SNMOT-121": {
+        "referee": [12],
+        "ball": [16],
+        "goalkeeper": [23]
+    },
+    "SNMOT-122": {
+        "referee": [18,25],
         "ball": [19],
-        "goalkeeper": [17]
+        "goalkeeper": [17,26]
     },
-        "SNMOT-063": {
-        "referee": [8,18],
+    "SNMOT-123": {
+        "referee": [10],
+        "ball": [12,16],
+        "goalkeeper": [11,25]
+    },
+    "SNMOT-124": {
+        "referee": [2,17],
+        "ball": [5],
+        "goalkeeper": [24,25]
+    },
+    "SNMOT-125": {
+        "referee": [7,9,25],
+        "ball": [8],
+        "goalkeeper": [1,26]
+    },
+    "SNMOT-126": {
+        "referee": [10,14],
+        "ball": [11],
+        "goalkeeper": [2]
+    },
+    "SNMOT-127": {
+        "referee": [18,21],
         "ball": [19],
-        "goalkeeper": [1,25]
+        "goalkeeper": []
     },
-    
-    # Tambahkan sesuai kebutuhan
+    "SNMOT-128": {
+        "referee": [5,19],
+        "ball": [13],
+        "goalkeeper": [12]
+    },
+    "SNMOT-129": {
+        "referee": [20,23],
+        "ball": [21],
+        "goalkeeper": [11,25]
+    },
+    "SNMOT-130": {
+        "referee": [17],
+        "ball": [19],
+        "goalkeeper": [18]
+    },
+    "SNMOT-131": {
+        "referee": [19,23],
+        "ball": [1],
+        "goalkeeper": [2]
+    },
 }
 
 # Fungsi: tentukan kelas berdasarkan track_id
@@ -101,10 +159,10 @@ def process_sequence(seq_path):
         return
 
     game_id = read_game_id(gameinfo_path)
-    target_seq_dir = os.path.join(TARGET_DIR, game_id, snmot_name)
-    train_dir = os.path.join(target_seq_dir, 'train', 'images')
+    target_seq_dir = os.path.join(TARGET_DIR, game_id)
+    train_dir = os.path.join(target_seq_dir, 'test', 'images')
     valid_dir = os.path.join(target_seq_dir, 'valid', 'images')
-    train_label_dir = os.path.join(target_seq_dir, 'train', 'labels')
+    train_label_dir = os.path.join(target_seq_dir, 'test', 'labels')
     valid_label_dir = os.path.join(target_seq_dir, 'valid', 'labels')
 
     os.makedirs(train_dir, exist_ok=True)

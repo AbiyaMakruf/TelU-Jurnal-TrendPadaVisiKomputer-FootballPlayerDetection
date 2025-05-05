@@ -1,8 +1,9 @@
 import cv2
 import os
 
-GT_FILE = 'tracking-2023/train/SNMOT-063/gt/gt.txt'
-IMG_FOLDER = 'tracking-2023/train/SNMOT-063/img1'
+FILE_ID = 120
+GT_FILE = f'tracking-2023/test/SNMOT-{FILE_ID}/gt/gt.txt'
+IMG_FOLDER = f'tracking-2023/test/SNMOT-{FILE_ID}/img1'
 
 # Baca isi gt.txt
 with open(GT_FILE, 'r') as f:
@@ -27,7 +28,7 @@ for line in lines:
     })
 
 cv2.namedWindow("Frame", cv2.WINDOW_NORMAL)
-cv2.resizeWindow("Frame", 960, 540)
+cv2.resizeWindow("Frame", 1280, 720)
 
 for frame_id in sorted(annotations.keys()):
     if frame_id % 20 != 1:
@@ -45,10 +46,10 @@ for frame_id in sorted(annotations.keys()):
         track_id = ann['track_id']
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
         cv2.putText(img, f"ID: {track_id}", (x, y - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+                    cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
     # Resize jika perlu:
-    resized_img = cv2.resize(img, (0, 0), fx=0.5, fy=0.5)
+    resized_img = cv2.resize(img, (0, 0), fx=1, fy=1)
 
     cv2.imshow("Frame", resized_img)
     key = cv2.waitKey(0)
