@@ -667,7 +667,7 @@ class ProfileModels:
         return {
             "model/name": model_name,
             "model/parameters": params,
-            "model/GFLOPs": round(flops, 3),
+            "model/GFLOPs": round(flops, 9),
             "model/speed_ONNX(ms)": round(t_onnx[0], 3),
             "model/speed_TensorRT(ms)": round(t_engine[0], 3),
         }
