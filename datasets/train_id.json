@@ -1,0 +1,92 @@
+{
+    "SNMOT-060": {
+        "referee": [14, 17,26],
+        "ball": [18],
+        "goalkeeper": [22,25]
+    },
+    "SNMOT-061": {
+        "referee": [3,4,26],
+        "ball": [1],
+        "goalkeeper": [2,25]
+    },
+        "SNMOT-062": {
+        "referee": [18,23],
+        "ball": [19],
+        "goalkeeper": [17]
+    },
+        "SNMOT-063": {
+        "referee": [8,18],
+        "ball": [19],
+        "goalkeeper": [1,25]
+    },
+        "SNMOT-064": {
+            "referee": [21,22],
+            "ball": [23],
+            "goalkeeper": [24]
+    },
+        "SNMOT-065": {
+            "referee": [22,23],
+            "ball": [21],
+            "goalkeeper": [24]
+    },
+        "SNMOT-066": {
+            "referee": [1,5,25],
+            "ball": [24],
+            "goalkeeper": [24]
+    },
+        "SNMOT-067": {
+            "referee": [21,20,25],
+            "ball": [22],
+            "goalkeeper": [19, 26]
+    },
+        "SNMOT-068": {
+            "referee": [9,24],
+            "ball": [8],
+            "goalkeeper": [4]
+    },
+        "SNMOT-069": {
+            "referee": [15,13],
+            "ball": [18],
+            "goalkeeper": []
+    },
+        "SNMOT-070": {
+            "referee": [1,2],
+            "ball": [12],
+            "goalkeeper": [24, 25]
+    },
+        "SNMOT-071": {
+            "referee": [18],
+            "ball": [20],
+            "goalkeeper": [19]
+    },
+        "SNMOT-072": {
+            "referee": [2,24],
+            "ball": [1],
+            "goalkeeper": [22]
+    },
+        "SNMOT-073": {
+            "referee": [7,17],
+            "ball": [19],
+            "goalkeeper": [24, 25]
+    },
+        "SNMOT-074": {
+            "referee": [24,25,9],
+            "ball": [23],
+            "goalkeeper": [22]
+    },
+        "SNMOT-075": {
+            "referee": [10,23],
+            "ball": [22],
+            "goalkeeper": [11]
+    },
+        "SNMOT-076": {
+            "referee": [5,19,22],
+            "ball": [25],
+            "goalkeeper": [26]
+    },
+        "SNMOT-077": {
+            "referee": [5,21],
+            "ball": [20],
+            "goalkeeper": [23]
+    }
+}

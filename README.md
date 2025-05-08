@@ -1,2 +1,3 @@
 Target Publikasi: https://ojs.unud.ac.id/index.php/lontar
 Word Paper: https://telkomuniversityofficial-my.sharepoint.com/:w:/g/personal/muhammadabiyamakruf_student_telkomuniversity_ac_id/Ea8k2DOUia1MmObHKVYQFUYBrtdst38dfkJmzcpPDVV4Hw?e=SQWq6K
+Sumber dataset: https://www.soccer-net.org/

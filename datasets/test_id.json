@@ -1,0 +1,82 @@
+{
+    "SNMOT-116": {
+        "referee": [4,25], 
+        "ball": [20], 
+        "goalkeeper": [19]
+    },
+    "SNMOT-117": {
+        "referee": [3,21], 
+        "ball": [8], 
+        "goalkeeper": [11]
+    },
+    "SNMOT-118": {
+        "referee": [14,21], 
+        "ball": [11], 
+        "goalkeeper": [9]
+    },
+    "SNMOT-119": {
+        "referee": [15,22], 
+        "ball": [6], 
+        "goalkeeper": [5]
+    },
+    "SNMOT-120": {
+        "referee": [22,16], 
+        "ball": [1], 
+        "goalkeeper": [11,26]
+    }, 
+    "SNMOT-121": {
+        "referee": [12], 
+        "ball": [16], 
+        "goalkeeper": [23]
+    },
+    "SNMOT-122": {
+        "referee": [18,25], 
+        "ball": [19], 
+        "goalkeeper": [17,26]
+    },
+    "SNMOT-123": {
+        "referee": [10], 
+        "ball": [12,16], 
+        "goalkeeper": [11,25]
+    },
+    "SNMOT-124": {
+        "referee": [2,17], 
+        "ball": [5], 
+        "goalkeeper": [24,25]
+    },
+    "SNMOT-125": {
+        "referee": [7,9,25], 
+        "ball": [8], 
+        "goalkeeper": [1,26]
+    },
+    "SNMOT-126": {
+        "referee": [10,14], 
+        "ball": [11], 
+        "goalkeeper": [2]
+    },
+    "SNMOT-127": {
+        "referee": [18,21], 
+        "ball": [19], 
+        "goalkeeper": []
+    },
+    "SNMOT-128": {
+        "referee": [5,19], 
+        "ball": [13], 
+        "goalkeeper": [12]
+    },
+    "SNMOT-129": {
+        "referee": [20,23], 
+        "ball": [21], 
+        "goalkeeper": [11,25]
+    },
+    "SNMOT-130": {
+        "referee": [17], 
+        "ball": [19], 
+        "goalkeeper": [18]
+    },
+    "SNMOT-131": {
+        "referee": [19,23], 
+        "ball": [1], 
+        "goalkeeper": [2]
+    }
+}
