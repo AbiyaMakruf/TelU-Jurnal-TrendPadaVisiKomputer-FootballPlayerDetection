@@ -8,7 +8,7 @@ import time
 from collections import defaultdict
 
 # --- Configuration ---
-SOURCE_DIR = Path('tracking-2023/train/') # Use Path objects
+SOURCE_DIR = Path('tracking-2023/test/') # Use Path objects
 TARGET_DIR = Path('./split/')   # Use a new target dir name
 
 # --- Split Ratios (Must sum to 1.0) ---
@@ -20,95 +20,85 @@ assert TRAIN_RATIO + VALID_RATIO + TEST_RATIO == 1.0, "Split ratios must sum to 
 
 # Mapping per folder - unchanged
 ID_MAPPINGS = {
-    "SNMOT-060": {
-        "referee": [14, 17,26],
-        "ball": [18],
-        "goalkeeper": [22,25]
+    "SNMOT-116": {
+        "referee": [4,25], 
+        "ball": [20], 
+        "goalkeeper": [19]
     },
-    "SNMOT-061": {
-        "referee": [3,4,26],
-        "ball": [1],
-        "goalkeeper": [2,25]
+    "SNMOT-117": {
+        "referee": [3,21], 
+        "ball": [8], 
+        "goalkeeper": [11]
     },
-        "SNMOT-062": {
-        "referee": [18,23],
-        "ball": [19],
-        "goalkeeper": [17]
+    "SNMOT-118": {
+        "referee": [14,21], 
+        "ball": [11], 
+        "goalkeeper": [9]
     },
-        "SNMOT-063": {
-        "referee": [8,18],
-        "ball": [19],
-        "goalkeeper": [1,25]
+    "SNMOT-119": {
+        "referee": [15,22], 
+        "ball": [6], 
+        "goalkeeper": [5]
     },
-        "SNMOT-064": {
-            "referee": [21,22],
-            "ball": [23],
-            "goalkeeper": [24]
+    "SNMOT-120": {
+        "referee": [22,16], 
+        "ball": [1], 
+        "goalkeeper": [11,26]
+    }, 
+    "SNMOT-121": {
+        "referee": [12], 
+        "ball": [16], 
+        "goalkeeper": [23]
     },
-        "SNMOT-065": {
-            "referee": [22,23],
-            "ball": [21],
-            "goalkeeper": [24]
+    "SNMOT-122": {
+        "referee": [18,25], 
+        "ball": [19], 
+        "goalkeeper": [17,26]
     },
-        "SNMOT-066": {
-            "referee": [1,5,25],
-            "ball": [24],
-            "goalkeeper": [24]
+    "SNMOT-123": {
+        "referee": [10], 
+        "ball": [12,16], 
+        "goalkeeper": [11,25]
     },
-        "SNMOT-067": {
-            "referee": [21,20,25],
-            "ball": [22],
-            "goalkeeper": [19, 26]
+    "SNMOT-124": {
+        "referee": [2,17], 
+        "ball": [5], 
+        "goalkeeper": [24,25]
     },
-        "SNMOT-068": {
-            "referee": [9,24],
-            "ball": [8],
-            "goalkeeper": [4]
+    "SNMOT-125": {
+        "referee": [7,9,25], 
+        "ball": [8], 
+        "goalkeeper": [1,26]
     },
-        "SNMOT-069": {
-            "referee": [15,13],
-            "ball": [18],
-            "goalkeeper": []
+    "SNMOT-126": {
+        "referee": [10,14], 
+        "ball": [11], 
+        "goalkeeper": [2]
     },
-        "SNMOT-070": {
-            "referee": [1,2],
-            "ball": [12],
-            "goalkeeper": [24, 25]
+    "SNMOT-127": {
+        "referee": [18,21], 
+        "ball": [19], 
+        "goalkeeper": []
     },
-        "SNMOT-071": {
-            "referee": [18],
-            "ball": [20],
-            "goalkeeper": [19]
+    "SNMOT-128": {
+        "referee": [5,19], 
+        "ball": [13], 
+        "goalkeeper": [12]
     },
-        "SNMOT-072": {
-            "referee": [2,24],
-            "ball": [1],
-            "goalkeeper": [22]
+    "SNMOT-129": {
+        "referee": [20,23], 
+        "ball": [21], 
+        "goalkeeper": [11,25]
     },
-        "SNMOT-073": {
-            "referee": [7,17],
-            "ball": [19],
-            "goalkeeper": [24, 25]
+    "SNMOT-130": {
+        "referee": [17], 
+        "ball": [19], 
+        "goalkeeper": [18]
     },
-        "SNMOT-074": {
-            "referee": [24,25,9],
-            "ball": [23],
-            "goalkeeper": [22]
-    },
-        "SNMOT-075": {
-            "referee": [10,23],
-            "ball": [22],
-            "goalkeeper": [11]
-    },
-        "SNMOT-076": {
-            "referee": [5,19,22],
-            "ball": [25],
-            "goalkeeper": [26]
-    },
-        "SNMOT-077": {
-            "referee": [5,21],
-            "ball": [20],
-            "goalkeeper": [23]
+    "SNMOT-131": {
+        "referee": [19,23], 
+        "ball": [1], 
+        "goalkeeper": [2]
     }
 }
 
