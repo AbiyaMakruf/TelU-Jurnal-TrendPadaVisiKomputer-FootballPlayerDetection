@@ -63,7 +63,7 @@ def main():
 
     # --- KDE Plot ---
     if PLOT_KDE:
-        plt.figure(figsize=(12, 6))
+        plt.figure(figsize=(8, 8))
         for cls_name in CLASS_NAMES:
             all_sizes = (
                 size_map[cls_name]['train'] +

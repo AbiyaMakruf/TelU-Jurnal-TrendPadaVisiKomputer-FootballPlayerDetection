@@ -61,7 +61,7 @@ def main():
 
     # === Optional Histogram ===
     if PLOT_HISTOGRAM:
-        plt.figure(figsize=(12, 6))
+        plt.figure(figsize=(8, 8))
         all_means = []
         all_medians = []
 
