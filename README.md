@@ -1,5 +1,8 @@
 # ⚽ YOLOv11-LCA: Soccer Ball and Player Detection with Lightweight Attention
 
+![Poster](Draft_Journal\poster.jpg)
+
+
 ## 📌 Deskripsi
 Proyek ini mengimplementasikan **YOLOv11-LCA**, yaitu pengembangan dari arsitektur YOLOv11 dengan integrasi **Low-Complexity Attention Module (LCAM)** untuk meningkatkan deteksi objek kecil, khususnya **bola sepak** dalam video siaran pertandingan. 🎯
 
