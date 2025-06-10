@@ -1,6 +1,6 @@
 # ⚽ YOLOv11-LCA: Soccer Ball and Player Detection with Lightweight Attention
 
-![Poster](Draft_Journal\poster.jpg)
+![Poster](Draft_Journal/poster.jpg)
 
 
 ## 📌 Deskripsi
