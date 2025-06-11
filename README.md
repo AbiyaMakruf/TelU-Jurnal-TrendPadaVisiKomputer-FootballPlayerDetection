@@ -65,7 +65,8 @@ Model ini menggunakan backbone dari **YOLOv11** dengan integrasi LCAM dan LD-SAM
 | YOLOv11m         | 0.558     | 0.137  | 0.156  | 0.0486    |
 | **YOLOv11m-LCA** | 0.577     | **0.169** | **0.220** | **0.0773** |
 
-> YOLOv11m-LCA menunjukkan hasil terbaik untuk deteksi bola di semua metrik kecuali precision, yang tertinggi pada YOLOv11s-LCA.
+> YOLOv11m-LCA menunjukkan hasil terbaik untuk deteksi bola di semua metrik kecuali precision, yang tertinggi pada YOLOv11s-LCA.s
+> Source Model: https://drive.google.com/file/d/1uEbZsa9fk3FMpStNRsM330UjaFWGwzDU/view?usp=sharing
 
 ---
 
